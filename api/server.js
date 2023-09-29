@@ -8,6 +8,11 @@ const port = 5000;
 //routes
 
 const categoryRoute = require("./routes/categories.js");
+const productRoute = require("./routes/products.js");
+const billRoute = require("./routes/bills.js");
+const authRoute = require("./routes/auth.js");
+
+
 
 dotenv.config();
 
@@ -23,6 +28,10 @@ const connect = async () => {
 //middlewares
 app.use(express.json());
 app.use("/api/categories", categoryRoute);
+app.use("/api/products", productRoute);
+app.use("/api/bills", billRoute);
+app.use("/api/auth", authRoute);
+
 
 app.listen(port, () => {
   connect();
