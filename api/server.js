@@ -25,7 +25,7 @@ const connect = async () => {
     throw error;
   }
 };
-
+app.use(cors());
 //middlewares
 app.use(express.json());
 app.use("/api/categories", categoryRoute);
@@ -33,6 +33,8 @@ app.use("/api/products", productRoute);
 app.use("/api/bills", billRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
+
+
 
 
 app.listen(port, () => {
